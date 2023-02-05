@@ -1,0 +1,93 @@
+para crear pruebas con ject con vite
+
+
+-primero instalar jest con yarn
+yarn add --dev jest
+
+
+-despues crear una carpeta con el nombres test
+esta carpeta esta al mismo nivel de la carpeta src
+
+
+-para realizar pruebas, la extension es de .test.js
+
+-despues ir al archivo de package.json
+ubicar la llave "test" y establecer el valor
+"jest --watchAll" para que los test se vean reflejados mas automaticamente
+
+
+tres pasos para realizar pruebas
+
+-inicializacion
+-estimulo 
+-Obsertar el comportamiento esperado
+
+
+-descargar e instalar una dependencia para la sintaxis de utlizar jest
+yarn add -D @types/jest
+
+-con la funcion describe de jest, puedo crear agrupaciones de test, osea ejecutar multiples test
+
+
+-una vez que cambiamos el .package.json a "jest --watchAll
+seleccionar en la consola "w" y despues "p" para solo ejecutar
+archivos especificos del test
+
+-agregar el comando
+yarn add --dev babel-jest @babel/core @babel/preset-env
+para que no existen errores en las importaciones
+
+
+-los objectos en javascript aunque tengan las mismas propiedades
+con los mimos valores, nunca sera iguales, porque estan 
+almacenados en diferente lugar de memoria
+
+-Osea para utlizar datos primitovs se utiliza el metodo toBe
+y para objetos el toEqual
+
+-toBeFalsy() => metodo para comprobar si el valor
+esperado es un falsy
+
+-las pruebas en jest son sincronas
+
+configurar jest, para que soporte el fetch,
+se van a crear dos archivos con estos nombress a nivel de la carperta raiz
+
+-jest.config.js
+-jest.setup.js
+
+descargar
+yarn add -D whatwg-fetch  => este paquete es para utlilziar
+fecth en node
+
+
+con jest y testing library vamos a testear
+
+testing library => es bueno para relizar pruebas en el virtual DOM, testing library esta mas enfocada en los click 
+
+
+jest => pruebas para javascript, y jest es mas
+para la logica
+
+para comprobar y realizar a testing a componentee de react
+por eso existe la extension .test.jsx
+
+para utlizar test.jsx necesitamos agregar mas configuraciones
+
+agregar esta propiedad al archivo "jest.config.js"
+testEnvironment: 'jest-enviroment-jsdom',
+
+instalar
+yarn add -D jest-environment-jsdom
+
+
+entrar al "babel.config.js"
+
+
+con el metodo toMatchSnapshot() es para crear una copia segun yo,
+es una copia en formato texto
+
+tecla u => para actualizar el snapshot
+
+toContais => es muy similar al metodo de los string
+"includes"s
